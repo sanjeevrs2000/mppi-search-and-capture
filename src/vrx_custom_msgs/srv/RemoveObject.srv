@@ -1,0 +1,7 @@
+# Request: the estimated position of the object to delete (in world frame)
+geometry_msgs/Point position
+---
+# Response
+bool success
+string object_name
+string message

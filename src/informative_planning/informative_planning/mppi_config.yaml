@@ -1,0 +1,22 @@
+device: "cuda"
+
+mppi:
+  device: "cuda"
+  mppi_mode: "simple"  # simple, halton-spline
+  sampling_method: "ou"  # ou, random, halton
+  num_samples: 150
+  horizon: 15
+  t_step: 2
+  control_step: 0.1
+  lambda_: 0.1
+  u_min: [1.0, -0.53]  # 1 m/s, -30 deg/s (0.53 rad/s)
+  u_max: [2.0, 0.53]  # 2 m/s, 30 deg/s
+  u_init: [1.5, 0.]
+  noise_sigma: [[0.04, 0.0], [0.0, 0.04]] # covariance matrix for noise
+  update_cov: False
+  rollout_var_discount: 1.0
+  sample_null_action: False
+  noise_abs_cost: False
+  filter_u: True
+  use_priors: True
+  sample_other_priors: True
