@@ -1,17 +1,37 @@
 # MPPI-based Informative Trajectory Planning for Search and Capture of Drifting Targets with ASVs
-Code accompanying the paper *"MPPI-based Informative Trajectory Planning for Search and Capture of Drifting Targets with ASVs"*.
+Code accompanying the RAL paper *"MPPI-based Informative Trajectory Planning for Search and Capture of Drifting Targets with ASVs"*.
+
+[![arXiv](https://img.shields.io/badge/arXiv-2606.12019-B31B1B.svg)](https://arxiv.org/abs/2606.12019)
 
 The system uses an autonomous surface vehicle (WAM-V) to jointly explore an unknown environment and intercept targets that drift freely. A hybrid planner switches between a global exploration mode using the MPPI informative planner and an intercept mode using pure pursuit guidance.
 
 Simulations are built on the [VRX](https://github.com/osrf/vrx) simulator (ROS 2 Humble, Gazebo Garden, Ubuntu 22.04).
 
+The paper can be found [here](https://arxiv.org/abs/2606.12019). 
+<!--
+If you found this repository useful, feel free to cite it.
+```
+@article{sanjeev2026mppi,
+  title={MPPI-based Informative Trajectory Planning for Search and Capture of Drifting Targets with ASVs},
+  author={Ramkumar Sudha, Sanjeev and Popovi{\'c}, Marija and Coates, Erlend M},
+  journal={IEEE Robotics and Automation Letters},
+  volume={},
+  number={},
+  pages={},
+  year={2026},
+}
+```
+-->
+
+
+<!--
 ## Packages
 
 | Package | Description |
 |---|---|
 | `informative_planning` | MPPI informative planner, dynamic occupancy grid map, hybrid guidance node |
 | `usv_navigation` | Stereo-vision object detector and PD velocity controller |
-<!-- | `pos_publisher` | Gazebo–ROS bridge for ground-truth object positions (C++) |
+ | `pos_publisher` | Gazebo–ROS bridge for ground-truth object positions (C++) |
 | `vrx_custom_msgs` | Custom ROS 2 service definitions |
 | `vrx_gz` / `vrx_ros` / `vrx_urdf` | VRX simulation environment (modified from upstream) | -->
 
@@ -59,9 +79,11 @@ ros2 launch informative_planning vis_rviz.launch.py
 
 All parameters (planner selection, cost weights, sensor range, mission time, mode-switching threshold, etc.) can be changed in `src/informative_planning/informative_planning/params.py`. MPPI sampling hyperparameters (number of samples, horizon, noise covariance, action limits) are in `src/informative_planning/informative_planning/mppi_config.yaml`.
 
+<!--
 ## License
 
 This repository is released under the [MIT License](LICENSE), except for third-party code that keeps its original license:
 
 - `vrx_gz`, `vrx_ros`, `vrx_urdf`: modified from [VRX](https://github.com/osrf/vrx), Apache License 2.0. The launch file `hybrid_plan_log.launch.py` is adapted from VRX and keeps its Apache 2.0 header.
 - `informative_planning/mppi_torch/mppi_utils.py`: MIT License, Copyright (c) 2020-2021 NVIDIA CORPORATION.
+-->
